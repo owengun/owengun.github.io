@@ -1,106 +1,118 @@
-<div align="center">
+# Hyde
 
-  # Chirpy Jekyll Theme
+Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+![Hyde screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
 
-  [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy?color=brightgreen)](https://rubygems.org/gems/jekyll-theme-chirpy)
-  [![CI](https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml/badge.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/actions/workflows/ci.yml)
-  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4e556876a3c54d5e8f2d2857c4f43894)](https://www.codacy.com/gh/cotes2020/jekyll-theme-chirpy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cotes2020/jekyll-theme-chirpy&amp;utm_campaign=Badge_Grade)
-  [![GitHub license](https://img.shields.io/github/license/cotes2020/jekyll-theme-chirpy.svg)](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
-  [![996.icu](https://img.shields.io/badge/link-996.icu-%23FF4D5B.svg)](https://996.icu)
 
-  [**Live Demo →**](https://cotes2020.github.io/chirpy-demo)
+## Contents
 
-  [![Devices Mockup](https://chirpy-img.netlify.app/commons/devices-mockup.png)](https://cotes2020.github.io/chirpy-demo)
+- [Usage](#usage)
+- [Options](#options)
+  - [Sidebar menu](#sidebar-menu)
+  - [Sticky sidebar content](#sticky-sidebar-content)
+  - [Themes](#themes)
+  - [Reverse layout](#reverse-layout)
+- [Development](#development)
+- [Author](#author)
+- [License](#license)
 
+
+## Usage
+
+Hyde is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+
+
+## Options
+
+Hyde includes some customizable options, typically applied via classes on the `<body>` element.
+
+
+### Sidebar menu
+
+Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
+
+```
+---
+layout: page
+title: About
+---
+```
+
+**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+
+
+### Sticky sidebar content
+
+By default Hyde ships with a sidebar that affixes it's content to the bottom of the sidebar. You can optionally disable this by removing the `.sidebar-sticky` class from the sidebar's `.container`. Sidebar content will then normally flow from top to bottom.
+
+```html
+<!-- Default sidebar -->
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    ...
+  </div>
 </div>
 
-## Features
-
-- Dark/Light Theme Mode
-- Localized UI language
-- Pinned Posts
-- Hierarchical Categories
-- Trending Tags
-- Table of Contents
-- Last Modified Date of Posts
-- Syntax Highlighting
-- Mathematical Expressions
-- Mermaid Diagram & Flowchart
-- Dark/Light Mode Images
-- Embed Videos
-- Disqus/Utterances/Giscus Comments
-- Search
-- Atom Feeds
-- Google Analytics
-- Page Views Reporting
-- SEO & Performance Optimization
-
-## Quick Start
-
-Before starting, please follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of `Ruby`, `RubyGems`, `Jekyll`, and `Bundler`. In addition, [Git](https://git-scm.com/) is also required to be installed.
-
-### Step 1. Creating a New Site
-
-Create a new repository from the [**Chirpy Starter**](https://github.com/cotes2020/chirpy-starter/generate) and name it `<GH_USERNAME>.github.io`, where `GH_USERNAME` represents your GitHub username.
-
-### Step 2. Installing Dependencies
-
-Before running for the first time, go to the root directory of your site, and install dependencies as follows:
-
-```console
-$ bundle
+<!-- Modified sidebar -->
+<div class="sidebar">
+  <div class="container">
+    ...
+  </div>
+</div>
 ```
 
-### Step 3. Running Local Server
 
-Run the following command in the root directory of the site:
+### Themes
 
-```console
-$ bundle exec jekyll s
+Hyde ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
+
+![Hyde in red](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png)
+
+There are eight themes available at this time.
+
+![Hyde theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
+
+To use a theme, add anyone of the available theme classes to the `<body>` element in the `default.html` layout, like so:
+
+```html
+<body class="theme-base-08">
+  ...
+</body>
 ```
 
-Or run with Docker:
+To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/hyde/blob/master/public/css/hyde.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
 
-```console
-$ docker run -it --rm \
-    --volume="$PWD:/srv/jekyll" \
-    -p 4000:4000 jekyll/jekyll \
-    jekyll serve
+### Reverse layout
+
+![Hyde with reverse layout](https://f.cloud.github.com/assets/98681/1831230/42b0d3ac-7384-11e3-8d54-2065afd03f9e.png)
+
+Hyde's page orientation can be reversed with a single class.
+
+```html
+<body class="layout-reverse">
+  ...
+</body>
 ```
 
-After a while, navigate to the site at <http://localhost:4000>.
 
-## Documentation
+## Development
 
-For more details on usage, please refer to the tutorial on the [demo website](https://cotes2020.github.io/chirpy-demo/) / [wiki](https://github.com/cotes2020/jekyll-theme-chirpy/wiki). Note that the tutorial is based on the [latest release](https://github.com/cotes2020/jekyll-theme-chirpy/releases/latest), and the features of the default branch are usually ahead of the documentation.
+Hyde has two branches, but only one is used for active development.
 
-## Contributing
+- `master` for development.  **All pull requests should be submitted against `master`.**
+- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
 
-Welcome to report bugs, improve code quality or submit a new feature. For more information, see [contributing guidelines](.github/CONTRIBUTING.md).
 
-## Credits
+## Author
 
-This theme is mainly built with [Jekyll](https://jekyllrb.com/) ecosystem, [Bootstrap](https://getbootstrap.com/), [Font Awesome](https://fontawesome.com/) and some other wonderful tools (their copyright information can be found in the relevant files). The avatar and favicon design come from [Clipart Max](https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/).
+**Mark Otto**
+- <https://github.com/mdo>
+- <https://twitter.com/mdo>
 
-:tada: Thanks to all the volunteers who contributed to this project, their GitHub IDs are on [this list](https://github.com/cotes2020/jekyll-theme-chirpy/graphs/contributors). Also, I won't forget those guys who submitted the issues or unmerged PR because they reported bugs, shared ideas, or inspired me to write more readable documentation.
-
-Last but not least, thank [JetBrains][jb] for providing the OSS development license.
-
-## Sponsoring
-
-If you like this theme or find it helpful, please consider sponsoring me, because it will encourage and help me better maintain the project, I will be very grateful!
-
-[![Ko-fi](https://img.shields.io/badge/-Buy%20Me%20a%20Coffee-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/coteschung)
-[![Wechat Pay](https://img.shields.io/badge/-Tip%20Me%20on%20WeChat-brightgreen?logo=wechat&logoColor=white)][cn-donation]
-[![Alipay](https://img.shields.io/badge/-Tip%20Me%20on%20Alipay-blue?logo=alipay&logoColor=white)][cn-donation]
 
 ## License
 
-This work is published under [MIT](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE) License.
+Open sourced under the [MIT license](LICENSE.md).
 
-<!-- ReadMe links -->
-
-[jb]: https://www.jetbrains.com/?from=jekyll-theme-chirpy
-[cn-donation]: https://sponsor.cotes.page/
+<3
