@@ -20,10 +20,10 @@ As a candidate to be an Engineer, it was natural for me to study its dynamics, f
 # Coordinate Definition
 
 Before figuring out dynamics of drone, it's imperative to know about the coordinate system; drone (body frame) and the global world (reference frame) are not the same.
-<br/><br>
+<br></br>
 
 <img src ="./ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
-[Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br/>source: PX4 Official Website<br>
+[Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br>source: PX4 Official Website</br>
 
 <br></br>
 One needs to make a transformation matrix from the reference fame to body frame. To do so, rotating one at a time (thus making a transformation matrix each and multiplying them) will be sufficient. 
@@ -37,7 +37,7 @@ $[x^E, y^E, z^E]$: Reference Frame (Earth)
 $[x^B, y^B, z^B]$: Body Frame (Drone)
 
 $[\phi, \theta, \psi]$: orientation of quadcopter (roll, pitch, yaw)
-<br/><br>
+<br></br>
 
 As I mentioned earlier, I will use Z-Y-X convention:
 <br></br>
@@ -77,13 +77,13 @@ $$\therefore \begin{bmatrix}x^E\\ y^E \\ z^E\end{bmatrix} = R^{T}\begin{bmatrix}
 
 
 while the equation above is the rotational matrix for position, velocity, and force, there is a separate matrix from body to global regarding angular rates:
-<br/><br>
+<br></br>
 
 $\omega = [p, q, r]$: Angular rate for body frame (drone)
 
 $[\frac{d\phi}{dt}, \frac{d\theta}{dt}, \frac{d\psi}{dt}]$: Angular rate from reference frame (Earth)
 
-<br/><br>
+<br></br>
 
 One needs to understand that for this case, there's no need to rotate about all sequence (Z-X-Y). One can think about projecting into one coordinate frame level (e.g. $Ox_b^2y_b^2z_b^2$, before final rotation) 
 
@@ -92,8 +92,8 @@ Therefore,
 $$\omega = \begin{bmatrix} p \\ q \\ r \end{bmatrix} = R_{\phi}R_{\theta} \begin{bmatrix} 0 \\ 0 \\ \frac{d\psi}{dt} \end{bmatrix} + R_{\phi} \begin{bmatrix} 0 \\ \frac{d\theta}{dt} \\ 0 \end{bmatrix} + \begin{bmatrix} \frac{d\phi}{dt} \\ 0 \\ 0 \end{bmatrix}= \begin{bmatrix} 1 & 0 & -sin(\theta) \\ 0 & cos(\phi) & sin(\phi)cos(\theta) \\ 0 & -sin(\phi) & cos(\phi)cos(\theta) \end{bmatrix} \begin{bmatrix}  \frac{d\phi}{dt} \\ \frac{d\theta}{dt} \\ \frac{d\psi}{dt} \end{bmatrix} $$
 
 $$\therefore \begin{bmatrix}  \frac{d\phi}{dt} \\ \frac{d\theta}{dt} \\ \frac{d\psi}{dt} \end{bmatrix} = \begin{bmatrix} 1 & sin(\phi)tan(\theta) & cos(\phi)tan(\theta) \\ 0 & cos(\phi) & -sin(\phi) \\ 0 & \frac{sin(\phi)}{cos(\theta)} & \frac{cos(\phi)}{cos(\theta)} \end{bmatrix}$$
-<br></br>
-<br></br>
+<br>
+<br>
 
 # Dynamics
 
