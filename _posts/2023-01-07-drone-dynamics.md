@@ -114,6 +114,8 @@ Therefore,
 
 $$\omega = \begin{bmatrix} p \\ q \\ r \end{bmatrix} = R_{\phi}R_{\theta} \begin{bmatrix} 0 \\ 0 \\ \frac{d\psi}{dt} \end{bmatrix} + R_{\phi} \begin{bmatrix} 0 \\ \frac{d\theta}{dt} \\ 0 \end{bmatrix} + \begin{bmatrix} \frac{d\phi}{dt} \\ 0 \\ 0 \end{bmatrix}= \begin{bmatrix} 1 & 0 & -sin(\theta) \\ 0 & cos(\phi) & sin(\phi)cos(\theta) \\ 0 & -sin(\phi) & cos(\phi)cos(\theta) \end{bmatrix} \begin{bmatrix}  \frac{d\phi}{dt} \\ \frac{d\theta}{dt} \\ \frac{d\psi}{dt} \end{bmatrix} $$
 
+<br>
+
 $$\therefore \begin{bmatrix}  \frac{d\phi}{dt} \\ \frac{d\theta}{dt} \\ \frac{d\psi}{dt} \end{bmatrix} = \begin{bmatrix} 1 & sin(\phi)tan(\theta) & cos(\phi)tan(\theta) \\ 0 & cos(\phi) & -sin(\phi) \\ 0 & \frac{sin(\phi)}{cos(\theta)} & \frac{cos(\phi)}{cos(\theta)} \end{bmatrix}$$
 <br>
 <br>
