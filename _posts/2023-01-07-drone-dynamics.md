@@ -45,7 +45,7 @@ As I mentioned earlier, I will use Z-Y-X convention:
 <br/>
 <br/>1st: rotation about Z-axis:
 
-$\begin{patrix} x\_b^1\\ y\_b^1 \\ z\_b^1 \end{pmatrix} = \begin{pmatrix} sin(\psi) & sin(\psi) & 0\\-sin(\psi) & cos(\psi) &0\\0 & 0 & 1\end{pmatrix}\begin{pmatrix}x^E\\ y^E \\ z^E\end{pmatrix} = R_{\psi} \begin{pmatrix}x^E \\ y^E \\ z^E \end{pmatrix}$
+$\begin{pmatrix} x\_b^1\\ y\_b^1 \\ z\_b^1 \end{pmatrix} = \begin{pmatrix} sin(\psi) & sin(\psi) & 0\\-sin(\psi) & cos(\psi) &0\\0 & 0 & 1\end{pmatrix}\begin{pmatrix}x^E\\ y^E \\ z^E\end{pmatrix} = R_{\psi} \begin{pmatrix}x^E \\ y^E \\ z^E \end{pmatrix}$
 
 $[x_b^1, y_b^1, z_b^1]$: body frame when rotated about Z-axis
 </br>
