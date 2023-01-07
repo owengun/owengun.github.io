@@ -117,6 +117,7 @@ $$\omega = \begin{bmatrix} p \\ q \\ r \end{bmatrix} = R_{\phi}R_{\theta} \begin
 <br>
 
 $$\therefore \begin{bmatrix}  \frac{d\phi}{dt} \\ \frac{d\theta}{dt} \\ \frac{d\psi}{dt} \end{bmatrix} = \begin{bmatrix} 1 & sin(\phi)tan(\theta) & cos(\phi)tan(\theta) \\ 0 & cos(\phi) & -sin(\phi) \\ 0 & \frac{sin(\phi)}{cos(\theta)} & \frac{cos(\phi)}{cos(\theta)} \end{bmatrix}$$
+
 <br>
 <br>
 
