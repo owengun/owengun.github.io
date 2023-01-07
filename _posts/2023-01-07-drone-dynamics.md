@@ -45,21 +45,21 @@ As I mentioned earlier, I will use Z-Y-X convention:
 <br/>
 <br/>1st: rotation about Z-axis:
 
-$\begin{bmatrix}x_b^1\\y_b^1\\z_b^1\end{bmatrix} = \begin{bmatrix}sin(\psi) & sin(\psi) & 0\\-sin(\psi) & cos(\psi) &0\\0 & 0 & 1\end{bmatrix}\begin{bmatrix}x^E\\y^E\\z^E\end{bmatrix} = R_{\psi} \begin{bmatrix}x^E\\y^E\\z^E\end{bmatrix}$
+$\begin{bmatrix} x_b^1\\ y_b^1 \\ z_b^1 \end{bmatrix} = \begin{bmatrix} sin(\psi) & sin(\psi) & 0\\-sin(\psi) & cos(\psi) &0\\0 & 0 & 1\end{bmatrix}\begin{bmatrix}x^E\\ y^E \\ z^E\end{bmatrix} = R_{\psi} \begin{bmatrix}x^E \\ y^E \\ z^E \end{bmatrix}$
 
 $[x_b^1, y_b^1, z_b^1]$: body frame when rotated about Z-axis
 </br>
 </br>
 2nd: rotation about $y_b^1$-axis
 
-$\begin{bmatrix}x_b^2\\y_b^2\\z_b^2\end{bmatrix} = \begin{bmatrix}cos(\theta) & 0 & -sin(\theta)\\0 & 1 & 0\\sin(\theta) & 0 & cos(\theta)\end{bmatrix}\begin{bmatrix}x_b^1\\y_b^1\\z_b^1\end{bmatrix} = R_{\theta} \begin{bmatrix}x_b^1\\y_b^1\\z_b^1\end{bmatrix}$
+$\begin{bmatrix}x_b^2\\ y_b^2\\ z_b^2\end{bmatrix} = \begin{bmatrix}cos(\theta) & 0 & -sin(\theta) \\0 & 1 & 0 \\ sin(\theta) & 0 & cos(\theta)\end{bmatrix}\begin{bmatrix}x_b^1 \\ y_b^1 \\ z_b^1 \end{bmatrix} = R_{\theta} \begin{bmatrix}x_b^1 \\ y_b^1 \\ z_b^1\end{bmatrix}$
 
 $[x_b^2, y_b^2, z_b^2]$: body frame when rotated about Z-axis
 </br>
 </br>
 3rd: rotation about $z_b^2$-axis
 
-$\begin{bmatrix}x^B\\y^B\\z^B\end{bmatrix} = \begin{bmatrix}1 & 0 & 0\\0 & cos(\phi) & sin(\phi)\\0 & -sin(\phi) & cos(\phi)\end{bmatrix}\begin{bmatrix}x_b^2\\y_b^2\\z_b^2\end{bmatrix} = R_{\psi} \begin{bmatrix}x_b^2\\y_b^2\\z_b^2\end{bmatrix}$
+$\begin{bmatrix}x^B \\y^B \\ z^B\end{bmatrix} = \begin{bmatrix}1 & 0 & 0\\0 & cos(\phi) & sin(\phi)\\0 & -sin(\phi) & cos(\phi)\end{bmatrix}\begin{bmatrix}x_b^2 \\ y_b^2 \\ z_b^2\end{bmatrix} = R_{\psi} \begin{bmatrix}x_b^2 \\ y_b^2\\z_b^2\end{bmatrix}$
 
 </br>
 </br>
@@ -75,7 +75,7 @@ since $R$ is orthonormal matrix,
 
 $R^{-1} =R^T$
 
-$\therefore \begin{bmatrix}x^E\\y^E\\z^E\end{bmatrix} = R^{T}\begin{bmatrix}x^B\\y^B\\z^B\end{bmatrix} = \begin{bmatrix} cos(\theta)cos{\psi} & sin(\phi)sin(\theta)cos(\psi) - cos(\phi)sin(\psi) &  cos(\phi)sin(\theta)cos(\psi) + sin(\phi)sin(\psi) \\ cos(\theta)sin(\psi) & sin(\phi)sin(\theta)sin(\psi) + cos(\phi)cos(\psi) & cos(\phi)sin(\theta)sin(\psi) - sin(\phi)cos(\psi) \\ -sin(\theta)  & sin(\phi)cos(\theta) & cos(\phi)cos(\theta) \end{bmatrix}\begin{bmatrix}x^E\\y^E\\z^E\end{bmatrix}$
+$\therefore \begin{bmatrix}x^E\\ y^E \\ z^E\end{bmatrix} = R^{T}\begin{bmatrix}x^B \\ y^B\\ z^B\end{bmatrix} = \begin{bmatrix} cos(\theta)cos{\psi} & sin(\phi)sin(\theta)cos(\psi) - cos(\phi)sin(\psi) &  cos(\phi)sin(\theta)cos(\psi) + sin(\phi)sin(\psi) \\ cos(\theta)sin(\psi) & sin(\phi)sin(\theta)sin(\psi) + cos(\phi)cos(\psi) & cos(\phi)sin(\theta)sin(\psi) - sin(\phi)cos(\psi) \\ -sin(\theta)  & sin(\phi)cos(\theta) & cos(\phi)cos(\theta) \end{bmatrix}\begin{bmatrix}x^E\\y^E\\z^E\end{bmatrix}$
 
 <br/>
 
