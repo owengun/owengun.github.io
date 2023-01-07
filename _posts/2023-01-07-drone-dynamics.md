@@ -15,24 +15,22 @@ use_math: true
 At the beginning of my junior year in DGIST (Daegu Kyeonbuk Institute of Science and Technology), I set my UGRP (Undergraduate Group Research Program) project's theme as drone. At that very moment, I did not know much about drone, although I like aircraft. However, I was aware of the future potential of it. Therefore, I began to study about drone.
 
 As a candidate to be an Engineer, it was natural for me to study its dynamics, from which many things can be derived: control, hardware, software, electrics, sensors, etc..
-<br>
-<br> 
+
 
 # Coordinate Definition
 
 Before figuring out dynamics of drone, it's imperative to know about the coordinate system; drone (body frame) and the global world (reference frame) are not the same.
 
-
-<img src ="./ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
-<figcaption align = "left"><b> [Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br> (source: PX4 Official Website)</b></figcaption>
+<img src ="/assets/images/ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
+<figcaption align = "left"><b> [Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) (source: PX4 Official Website)</b></figcaption>
 
 One needs to make a transformation matrix from the reference fame to body frame. To do so, rotating one at a time (thus making a transformation matrix each and multiplying them) will be sufficient. 
 There are lots of seqeunces of rotation (X-Y-Z, Z-Y-X, etc.). I used Z-Y-X rotation, which is convention. 
-<br>
+
 
 First, let's define notation:
 
-$[x^E, y^E, z^E]$: Reference Frame (Earth)
+$$[x^E, y^E, z^E]$$: Reference Frame (Earth)
 
 $[x^B, y^B, z^B]$: Body Frame (Drone)
 
