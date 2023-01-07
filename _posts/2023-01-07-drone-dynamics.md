@@ -22,7 +22,7 @@ As a candidate to be an Engineer, it was natural for me to study its dynamics, f
 Before figuring out dynamics of drone, it's imperative to know about the coordinate system; drone (body frame) and the global world (reference frame) are not the same.
 <br>
 
-<img src ="/_posts/ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
+<img src ="./_posts/ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
 [Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br>source: PX4 Official Website
 
 <br>
