@@ -1,6 +1,9 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+lsi: false
+excerpt_separater: "\n\n"
+incremental: false
 
 # Setup
 title:            Kevin's Study Blog
