@@ -24,13 +24,15 @@ Before figuring out dynamics of drone, it's imperative to know about the coordin
 <img src ="/assets/images/ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
 <figcaption align = "left"><b> [Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) (source: PX4 Official Website)</b></figcaption>
 
+<br>
+
 One needs to make a transformation matrix from the reference fame to body frame. To do so, rotating one at a time (thus making a transformation matrix each and multiplying them) will be sufficient. 
 There are lots of seqeunces of rotation (X-Y-Z, Z-Y-X, etc.). I used Z-Y-X rotation, which is convention. 
 
 
 First, let's define notation:
 
-$$[x^E, y^E, z^E]$$: Reference Frame (Earth)
+$[x^E, y^E, z^E]$: Reference Frame (Earth)
 
 $[x^B, y^B, z^B]$: Body Frame (Drone)
 
@@ -58,7 +60,7 @@ y^E \\
 z^E
 \end{bmatrix} = 
 
-R_{\psi} 
+R_\psi 
 
 \begin{bmatrix}
 x^E \\ 
