@@ -34,7 +34,7 @@ There are lots of seqeunces of rotation (X-Y-Z, Z-Y-X, etc.). I used Z-Y-X rotat
 
 First, let's define notation:
 
-$$[x^E, y^E, z^E]$$: Reference Frame (Earth)
+$[x^E, y^E, z^E]$: Reference Frame (Earth)
 
 $[x^B, y^B, z^B]$: Body Frame (Drone)
 
