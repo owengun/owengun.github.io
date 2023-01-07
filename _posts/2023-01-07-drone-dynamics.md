@@ -23,7 +23,8 @@ Before figuring out dynamics of drone, it's imperative to know about the coordin
 <br>
 
 <img src ="./ref_frames.png" width = "" height = "" title ="PX4 Reference frame">
-[Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br>source: PX4 Official Website
+<figcaption align = "left"><b> [Image 1]: Coordinate frames used in PX4 program (Left) and coordinate frames used typically (Right) <br> (source: PX4 Official Website)</b></figcaption>
+
 
 <br>
 One needs to make a transformation matrix from the reference fame to body frame. To do so, rotating one at a time (thus making a transformation matrix each and multiplying them) will be sufficient. 
