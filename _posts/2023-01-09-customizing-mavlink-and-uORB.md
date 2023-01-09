@@ -30,10 +30,10 @@ In order to make my PX4 firmware accept my custom control command comming from a
  Fortunately, there is a way to implement my framework after the 1st step almost exatly the same. I put the source at the beginning of my post. Feel free to check out.
 
 <br>
-<br>
 
 
- # MAVROS
+
+ ## MAVROS
 
 As instructed, I created my custom MAVROS plugin which subscribes an external ROS topic then converts to Mavlink message. However, I made a slight change for my designed framework: 
 
@@ -177,7 +177,9 @@ add_library(mavros_extras
 <b>Caution: do not put "float32" instead of float. It will cause type error in CMake</b>   
 <br>
 
-# PX4 Firmware
+## PX4 Firmware
+
+<br>
 
 1. <b>Define the same new Mavlink message to make PX4 Firmware aware of it: </b>
 
@@ -443,7 +445,7 @@ CONFIG_MODULES_COMMAND_RECEIVER=y
 
 <br>
 
-# Result
+## Result
 
 As instructed in the source link, I first compiled MAVROS plugin using "catkin build." I had to deal with compile errors such as invalid type (float32) error, minor syntax error, and file reference error.
 
