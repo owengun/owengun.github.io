@@ -14,6 +14,8 @@ use_math: true
 
 Source: [PX4 Sending a Custom Message from MAVROS to PX4]https://docs.px4.io/main/en/ros/mavros_custom_messages.html)
 
+## Introduction
+
 <br>
 In order to make my PX4 firmware accept my custom control command comming from actor neural net, I made a framework with steps specified below: 
 <br>
@@ -28,10 +30,6 @@ In order to make my PX4 firmware accept my custom control command comming from a
 4. PX4 firmware takes the message and converts into a <b>uORB message</b>, which will be parsed and processed by the driver module to get actuator outputs compatible with my actual drone's ESC.
 
  Fortunately, there is a way to implement my framework after the 1st step almost exatly the same. I put the source at the beginning of my post. Feel free to check out.
-
-<br>
-
-
 
  ## MAVROS
 
