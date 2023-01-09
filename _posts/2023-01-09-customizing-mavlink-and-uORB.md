@@ -32,8 +32,8 @@ In order to make my PX4 firmware accept my custom control command comming from a
 <br>
 <br>
 
- # MAVROS
 
+ # MAVROS
 
 As instructed, I created my custom MAVROS plugin which subscribes an external ROS topic then converts to Mavlink message. However, I made a slight change for my designed framework: 
 
@@ -151,7 +151,7 @@ PLUGINLIB_EXPORT_CLASS(mavros::extra_plugins::NeuralCommandPlugin, mavros::plugi
 <br>
 (workspace/src/mavros/mavros_extras/CMakeLists.txt)
 
-```txt
+```
 
 add_library(mavros_extras
 
@@ -202,7 +202,7 @@ add_library(mavros_extras
 <br>
 (PX4-Autopilot/msg/neural_command.msg)
 
-```msg
+```
 uint64 timestamp # time since system start (microseconds)
 float32[4] command
 ```
@@ -212,7 +212,7 @@ float32[4] command
 <br>
 (PX4-Autopilot/msg/CMakeLists.txt)
 
-```txt
+```
 set(msg_files
 ...
 	neural_command.msg
@@ -328,7 +328,7 @@ struct neural_command_s key = {}; // create uORB message variable to package dat
 
 (/PX4-Autopilot/src/modules/command_receiver/CMakeLists.txt)
 
-```txt
+```
 
 px4_add_module(
     MODULE modules__command_receiver
@@ -449,7 +449,7 @@ As instructed in the source link, I first compiled MAVROS plugin using "catkin b
 
 <br>
 
-<img src ="/assets/images/mavroscompileerror.png" width = "" height = "" title ="MAVROS Make Error">
+<img src ="/assets/images/mavroscompileerrorpng.png" width = "" height = "" title ="MAVROS Make Error">
 <figcaption align = "left"><b> [Image 1]: Invalid type compile error</b></figcaption>
 
 <br>
@@ -457,10 +457,6 @@ As instructed in the source link, I first compiled MAVROS plugin using "catkin b
 <img src ="/assets/images/mavroscompilesuccess.png" width = "" height = "" title ="MAVROS Make Success">
 <figcaption align = "left"><b> [Image 2]: MAVROS Successfully Compiled </b></figcaption>
 
-<br>
-
-<img src ="/assets/images/mavroscompileerror.png" width = "" height = "" title ="PX4 Reference frame">
-<figcaption align = "left"><b> [Image 3]: Invalid type compile error</b></figcaption>
 
 <br>
 
@@ -472,7 +468,7 @@ After compiling it, I sourced my workspace file to linux environment (~/.bashrc)
 
 <img src ="/assets/images/mavroslaunch2.png" width = "" height = "" title ="MAVROS Launch2">
 
-<figcaption align = "left"><b> [Image 4]: MAVROS Launched Successfully </b></figcaption>
+<figcaption align = "left"><b> [Image 3]: MAVROS Launched Successfully </b></figcaption>
 
 <br>
 
@@ -483,7 +479,7 @@ Then, I compiled PX4 Firmware and launched Gazebo SITL environment using "make p
 <img src ="/assets/images/px4make.png" width = "" height = "" title ="PX4 made successfully">
 
 <img src ="/assets/images/gazebo.png" width = "" height = "" title ="PX4 gazebo">
-<figcaption align = "left"><b> [Image 5]: PX4 Make Gazebo Successful </b></figcaption>
+<figcaption align = "left"><b> [Image 4]: PX4 Make Gazebo Successful </b></figcaption>
 
 <br>
 
@@ -492,7 +488,7 @@ For testing, I sent ROS message with random content via /neural_sub topic
 <br>
 
 <img src ="/assets/images/rostopicpub.png" width = "" height = "" title ="ROS publish message">
-<figcaption align = "left"><b> [Image 6]: Publishing ROS message </b></figcaption>
+<figcaption align = "left"><b> [Image 5]: Publishing ROS message </b></figcaption>
 
 <br>
 
@@ -504,7 +500,7 @@ This is my result:
 
 <img src ="/assets/images/px4apprunning.png" width = "" height = "" title ="ROS publish message">
 
-<figcaption align = "left"><b> [Image 7]: MAVROS and PX4 Receiving Message Successfully </b></figcaption>
+<figcaption align = "left"><b> [Image 6]: MAVROS and PX4 Receiving Message Successfully </b></figcaption>
 
 <br>
 
