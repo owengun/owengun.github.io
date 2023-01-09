@@ -31,6 +31,8 @@ In order to make my PX4 firmware accept my custom control command comming from a
 
 Fortunately, there is a way to implement my framework after the 1st step almost exatly the same. I put the source at the beginning of my post. Feel free to check out.
 
+<br>
+
  ## MAVROS
 
 As instructed, I created my custom MAVROS plugin which subscribes an external ROS topic then converts to Mavlink message. However, I made a slight change for my designed framework: 
