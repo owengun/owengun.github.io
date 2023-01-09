@@ -6,8 +6,9 @@ categories:
   - My Research
 tags:
   - Drone
-  - MATLAB
-  - Simulink
+  - APF
+  - Artificial Potential Field
+  - Reinforcement Learning
 use_math: true
 ---
 
